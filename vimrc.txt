@@ -1,0 +1,94 @@
+" Behave like vim not vi
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+ 
+" Show number lines on side
+set number
+
+" Sets the default window size
+set lines=50
+set columns=100
+ 
+" Sets the default wrap length
+set textwidth=80
+ 
+" Don't wrap text
+"set nowrap
+ 
+" Highlight text that is out of the textwidth
+" The color of the text thats out of the margin
+highlight outOfMargin term=standout ctermfg=1 ctermbg=7 guifg=DarkBlue guibg=LightGray
+
+" The command to turn this on
+command Showmargin match outOfMargin /\%>80v/
+
+" The command to turn this off
+command Noshowmargin match Normal /\%>80v/
+
+" Default to ShowMargin
+Showmargin
+ 
+" Do not create backup file
+set nobackup
+ 
+" Keep 50 lines of command line history
+set history=50
+ 
+" Show the cursor position all the time
+set ruler
+ 
+" Display incomplete commands
+set showcmd
+ 
+" Set the command window height to 2 lines, to avoid many cases of having to
+" "press <Enter> to continue"
+"set cmdheight=2
+ 
+" Do incremental searching
+set incsearch
+ 
+" In many terminal emulators the mouse works just fine, thus enable it.
+set mouse=a
+ 
+" Better command-line completion
+set wildmenu
+ 
+" Switch syntax highlighting on
+syntax on
+ 
+" Highlight last search pattern
+set hlsearch
+ 
+" Set autoindent on
+set autoindent
+ 
+" Set c indenting on
+set cindent
+ 
+" Indentation settings for using 4 spaces instead of tabs.
+" Do not change 'tabstop' from its default value of 8 with this setup.
+"set shiftwidth=4
+"set softtabstop=4
+"set expandtab
+ 
+" Indentation settings for using hard tabs for indent. Display tabs as
+" two characters wide.
+set shiftwidth=4
+set tabstop=4
+ 
+" Use visual bell instead of beeping when doing something wrong
+"set visualbell
+ 
+" Sets font to Courior New size 10 if in a gui
+if has("gui_running")
+        if has("gui_gtk2")
+                set guifont=Monospace\ 11
+        else
+                set guifont=Courier_New:h10:b:cDEFAULT
+        endif
+endif
+ 
+" Act like a microsoft windows editor
+source $VIMRUNTIME/mswin.vim
+behave mswin
+ 
