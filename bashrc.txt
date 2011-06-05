@@ -1,111 +1,100 @@
-# base-files version 3.7-1
+################################################################################
+# Shell Options: (see man bash for more info)
+################################################################################
 
-# To pick up the latest recommended .bashrc content,
-# look in /etc/defaults/etc/skel/.bashrc
+# If the shell can then for the prompt to be colorful
+force_color_prompt=yes
+color_prompt=yes
 
-# Modifying /etc/skel/.bashrc directly will prevent
-# setup from updating it.
-
-# The copy in your home directory (~/.bashrc) is yours, please
-# feel free to customise it to create a shell
-# environment to your liking.  If you feel a change
-# would be benificial to all, please feel free to send
-# a patch to the cygwin mailing list.
-
-# User dependent .bashrc file
-
-# ~/.bash_profile: executed by bash for login shells.
-
-# Shell Options
-# #############
-
-# See man bash for more options...
-
-# Don't wait for job termination notification
-# set -o notify
-
-# Don't use ^D to exit
-# set -o ignoreeof
-
-# Use case-insensitive filename globbing
- shopt -s nocaseglob
-
-# Make bash append rather than overwrite the history on disk
-# shopt -s histappend
-
-# When changing directory small typos can be ignored by bash
-# for example, cd /vr/lgo/apaache would find /var/log/apache
-# shopt -s cdspell
-
-
-# Completion options
-# ##################
-
-# These completion tuning parameters change the default behavior of bash_completion:
-
-# Define to access remotely checked-out files over passwordless ssh for CVS
-# COMP_CVS_REMOTE=1
-
-# Define to avoid stripping description in --option=description of './configure --help'
-# COMP_CONFIGURE_HINTS=1
-
-# Define to avoid flattening internal contents of tar files
-# COMP_TAR_INTERNAL_PATHS=1
-
-# If this shell is interactive, turn on programmable completion enhancements.
-# Any completions you add in ~/.bash_completion are sourced last.
-# case $- in
-#   *i*) [[ -f /etc/bash_completion ]] && . /etc/bash_completion ;;
-# esac
+#-------------------------------------------------------------------------------
+# ANSI color codes
+# 
+# These codes can be used to make the text after them a specific color.
+# The codes must be put into the value of the PSx variables and should follow
+# this format:
+#
+# \[\033[<code>m\]
+#
+# where code can be a set of the following numbers each separated by a ';'
+#
+# Example:
+#(dark black prompt background, light green prompt text, normal commands)
+# PS1="\[\033[0;40;1;32m\]\W$ \[\033[0m\]"
+#
+#
+# Special
+# 0		reset
+# 1		hicolor
+# 4		underline
+# 7		inverse background and text
+#
+# Regular (x=3 for text, x=4 for background)
+# x0	text black
+# x1	text red
+# x2	text green
+# xx	text yellow
+# x4	text blue
+# x5	text magenta
+# x6	text cyan
+# x7	text white
+#-------------------------------------------------------------------------------
 
 
-# History Options
-# ###############
+# This variable is what is shown at the terminal prompt
+# Some special characters are:
+# (more can be found in the man pages for 'bash'. Search for PROMPTING)
+# \t = time
+# \d = date
+# \W = the current working directory
+# \w = the full path of the current working directory
+# \u = the user name
+# \h = hostname
+export PS1="\[\033[1;34m\]\W \[\033[1;32m\]$ \[\033[0m\]"
+
+
+################################################################################
+# History Options:
+################################################################################
 
 # Don't put duplicate lines in the history.
 export HISTCONTROL="ignoredups"
 
-# Ignore some controlling instructions
-# export HISTIGNORE="[   ]*:&:bg:fg:exit"
+# Don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
 
-# Whenever displaying the prompt, write the previous line to disk
-# export PROMPT_COMMAND="history -a"
+# Append to the history file, don't overwrite it
+shopt -s histappend
 
-
-# Aliases
-# #######
-
-# Some example alias instructions
-# If these are enabled they will be used instead of any instructions
-# they may mask.  For example, alias rm='rm -i' will mask the rm
-# application.  To override the alias instruction use a \ before, ie
-# \rm will call the real rm not the alias.
-
-# Interactive operation...
-# alias rm='rm -i'
-# alias cp='cp -i'
-# alias mv='mv -i'
-
-# Default to human readable figures
-# alias df='df -h'
-# alias du='du -h'
-
-# Misc :)
-# alias less='less -r'                          # raw control characters
-# alias whence='type -a'                        # where, of a sort
-# alias grep='grep --color'                     # show differences in colour
-alias cls='cmd /c cls'				# sets cls variable to clear the screen
-
-# Some shortcuts for different directory listings
-alias ls='ls -hX --color=tty --classify'
-alias dir='ls --color=auto --format=long'
-# alias ll='ls -l'                              # long list
-# alias la='ls -A'                              # all but . and ..
-# alias l='ls -CF'                              #
+# For setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
 
-# Functions
-# #########
+################################################################################
+# Aliases:
+################################################################################
 
-# Some example functions
-# function settitle() { echo -ne "\e]2;$@\a\e]1;$@\a"; }
+# Custom ls settings
+# h	'human readable numbers'
+# F 'extension symbols'
+# X 'list alphabetically by extension'
+# --color=auto 'pretty colors'
+alias ls='ls -hFX --color=auto'
+
+# Custom grep settings
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias gvim='gvim -f'
+
+
+################################################################################
+# Exports:
+################################################################################
+
+# Home folder in the windows partition
+export WINHOME='/media/72B622CBB6228FA1/Users/bryan/'
+
+# PATH environment variable
+export PATH="$PATH:"
+
