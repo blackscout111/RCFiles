@@ -69,6 +69,7 @@ shopt -s histappend
 # For setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+HISTTIMEFORMAT='%F %T'
 
 
 ################################################################################
@@ -91,9 +92,6 @@ alias gvim='gvim -f'
 ################################################################################
 # Exports:
 ################################################################################
-
-# Home folder in the windows partition
-export WINHOME='/media/72B622CBB6228FA1/Users/bryan/'
 
 # PATH environment variable
 export PATH="$PATH:"
