@@ -88,6 +88,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias gvim='gvim -f'
 
+# Run eclipse easily
+alias eclipse="${HOME}/eclipse/eclipse &"
+
 
 ################################################################################
 # Exports:
@@ -95,4 +98,8 @@ alias gvim='gvim -f'
 
 # PATH environment variable
 export PATH="$PATH:"
+
+# Library path variables
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:"
+export LIBRARY_PATH="$LIBRARY_PATH:/usr/lib:/usr/local/lib:"
 

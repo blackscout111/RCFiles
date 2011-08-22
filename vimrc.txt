@@ -91,4 +91,3 @@ endif
 " Act like a microsoft windows editor
 source $VIMRUNTIME/mswin.vim
 behave mswin
- 
