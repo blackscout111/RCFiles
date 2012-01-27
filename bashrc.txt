@@ -49,7 +49,7 @@ color_prompt=yes
 # \w = the full path of the current working directory
 # \u = the user name
 # \h = hostname
-export PS1="\[\033[1;34m\]\W \[\033[1;32m\]$ \[\033[0m\]"
+export PS1="\[\033[1;34m\][\u@\h] \W \[\033[1;32m\]$ \[\033[0m\]"
 
 
 ################################################################################
@@ -86,10 +86,12 @@ alias ls='ls -hFX --color=auto'
 # Custom grep settings
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
+
+# Default gvim startup options
 alias gvim='gvim -f'
 
-# Run eclipse easily
-alias eclipse="${HOME}/eclipse/eclipse &"
+# Use vim instead of vi
+alias vi='vim'
 
 
 ################################################################################
