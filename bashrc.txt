@@ -81,7 +81,7 @@ HISTTIMEFORMAT='%F %T'
 # F 'extension symbols'
 # X 'list alphabetically by extension'
 # --color=auto 'pretty colors'
-alias ls='ls -hFX --color=auto'
+alias ls='ls -hF --color=auto'
 
 # Custom grep settings
 alias grep='grep --color=auto'
