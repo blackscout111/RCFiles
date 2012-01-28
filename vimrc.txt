@@ -44,9 +44,6 @@ set showcmd
 " Do incremental searching
 set incsearch
  
-" In many terminal emulators the mouse works just fine, thus enable it.
-set mouse=a
- 
 " Better command-line completion
 set wildmenu
  
