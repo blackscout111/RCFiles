@@ -93,13 +93,31 @@ alias gvim='gvim -f'
 # Use vim instead of vi
 alias vi='vim'
 
+# Alias for Markdown
+alias markdown='Markdown.pl'
+alias mdconvert='mdconvert.sh'
+
+# Use pylab instead of ipython
+alias ipython='ipython -pylab'
+
+# Set default xflux settings
+alias xflux='xflux -z 12180 -k 4000'
+
+# Login to mdl-vm5
+alias mdlvm5='ssh -X fonts@mdl-vm5.eng.rpi.edu'
+
+# Login to Monotype VM
+alias monotypevm='ssh -X monotype@localhost -p 2222'
+
 
 ################################################################################
 # Exports:
 ################################################################################
 
 # PATH environment variable
-export PATH="$PATH:"
+export PATH="$PATH:$HOME/Markdown/"
+export PATH="$PATH:/usr/local/MATLAB/R2011a/bin"
+export PATH="$PATH:$HOME/xflux/"
 
 # Library path variables
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:"
