@@ -6,8 +6,8 @@ set nocompatible
 set number
 
 " Sets the default window size
-set lines=24
-set columns=85
+"set lines=24
+"set columns=85
  
 " Sets the default wrap length
 set textwidth=80
