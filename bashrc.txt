@@ -100,16 +100,22 @@ alias mdconvert='mdconvert.sh'
 # Use pylab instead of ipython
 alias ipython='ipython -pylab'
 
+
 ################################################################################
 # Exports:
 ################################################################################
 
+# Root environment variables
+export ROOTSYS="$HOME/root"
+export PYTHONPATH="$ROOTSYS/lib"
+
 # PATH environment variable
 export PATH="$PATH:$HOME/Markdown/"
-export PATH="$PATH:/usr/local/MATLAB/R2011a/bin"
-export PATH="$PATH:$HOME/Sublime Text 2"
+export PATH="$PATH:$ROOTSYS/bin"
 
 # Library path variables
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib:/usr/local/lib:"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$ROOTSYS/lib"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/lib:/usr/local/lib:"
+
 
